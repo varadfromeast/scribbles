@@ -28,3 +28,5 @@ kubectl apply -f alert-owner-test.yaml
 kubectl exec -it alert-owner-test -n bld -- bash
 
 kubectl get deployment nls-alert-load -n bld -o yaml > deployment.yaml
+
+kubectl get sa -n bld -o custom-columns=NAME:.metadata.name,GCP_SA:.metadata.annotations.iam\.gke\.io/gcp-service-account
