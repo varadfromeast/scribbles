@@ -32,3 +32,8 @@ kubectl get deployment nls-alert-load -n bld -o yaml > deployment.yaml
 kubectl get sa -n bld -o custom-columns=NAME:.metadata.name,GCP_SA:.metadata.annotations.iam\.gke\.io/gcp-service-account
 
 kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "curl -H 'Metadata-Flavor: Google' http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email"
+
+kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which curl"
+kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which wget"
+kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which gcloud"
+kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which busybox"
