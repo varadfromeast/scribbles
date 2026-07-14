@@ -1,2 +1,8 @@
 curl -H "Metadata-Flavor: Google" \
 http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
+
+PUBSUB_PROJECT=db-dev-jiat-mp-dbcs-dev1
+TOKEN=$(gcloud auth application-default print-access-token)
+
+curl -H "Authorization: Bearer $TOKEN" \
+"https://pubsub.googleapis.com/v1/projects/$PUBSUB_PROJECT/subscriptions/alert-load-request-subscription"
