@@ -26,3 +26,5 @@ spec:
 kubectl apply -f alert-owner-test.yaml
 
 kubectl exec -it alert-owner-test -n bld -- bash
+
+kubectl get deployment nls-alert-load -n bld -o yaml > deployment.yaml
