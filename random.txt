@@ -37,3 +37,5 @@ kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which curl"
 kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which wget"
 kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which gcloud"
 kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which busybox"
+
+kubectl get deploy nls-alert-load -n bld -o yaml | findstr serviceAccount
