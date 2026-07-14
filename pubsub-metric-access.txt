@@ -1,0 +1,11 @@
+PROJECT_ID=db-dev-mlf6-mp-afcswb
+SUBSCRIPTION_NAME=alert-load-request-subscription
+TOKEN=$(gcloud auth application-default print-access-token)
+
+# Test access to the Pub/Sub metric
+curl -sS -H "Authorization: Bearer $TOKEN" --get \
+"https://monitoring.googleapis.com/v3/projects/$PROJECT_ID/timeSeries" \
+--data-urlencode 'filter=metric.type="pubsub.googleapis.com/subscription/num_undelivered_messages" AND resource.labels.subscription_id="'"$SUBSCRIPTION_NAME"'"' \
+--data-urlencode "interval.startTime=$(date -u -d '30 minutes ago' +%Y-%m-%dT%H:%M:%SZ)" \
+--data-urlencode "interval.endTime=$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+--data-urlencode "view=FULL"
