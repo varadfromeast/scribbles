@@ -6,3 +6,23 @@ TOKEN=$(gcloud auth application-default print-access-token)
 
 curl -H "Authorization: Bearer $TOKEN" \
 "https://pubsub.googleapis.com/v1/projects/$PUBSUB_PROJECT/subscriptions/alert-load-request-subscription"
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: alert-owner-test
+  namespace: bld
+spec:
+  serviceAccountName: alert-owner
+  restartPolicy: Never
+  containers:
+  - name: cloud-sdk
+    image: google/cloud-sdk:slim
+    command:
+      - sleep
+      - "3600"
+
+kubectl apply -f alert-owner-test.yaml
+
+kubectl exec -it alert-owner-test -n bld -- bash
