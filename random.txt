@@ -39,3 +39,19 @@ kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which gcloud"
 kubectl exec -n bld nls-alert-load-6fb9c4dd59-xd7hr -- sh -c "which busybox"
 
 kubectl get deploy nls-alert-load -n bld -o yaml | findstr serviceAccount
+
+module "iam-binding-keda-alert-load-monitoring" {
+  source = "terraform-google-modules/iam/google//modules/member_iam"
+
+  # Project where the Pub/Sub subscription and its metrics exist
+  project_id = "db-dev-jiat-mp-dbcs-dev1"
+
+  # GSA created in the WB project for KEDA
+  service_account_address = "keda-alert-load-reader@db-dev-mlf6-mp-afcswb.iam.gserviceaccount.com"
+
+  prefix = "serviceAccount"
+
+  project_roles = [
+    "roles/monitoring.viewer"
+  ]
+}
