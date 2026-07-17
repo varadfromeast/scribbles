@@ -1,3 +1,7 @@
+gcloud pubsub subscriptions describe alert-load-request-subscription --project=db-dev-jiat-mp-dbcs-dev1
+
+
+
 gcloud pubsub topics publish alert-load-request-topic \
   --project=db-dev-jiat-mp-dbcs-dev1 \
   --message="test-1"
