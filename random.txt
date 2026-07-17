@@ -1,3 +1,6 @@
+curl -H "Authorization: Bearer $(gcloud auth print-access-token)" "https://monitoring.googleapis.com/v3/projects/db-dev-jiat-mp-dbcs-dev1/timeSeries?filter=metric.type%3D%22pubsub.googleapis.com%2Fsubscription%2Fnum_undelivered_messages%22&pageSize=1"
+
+
 curl -H "Metadata-Flavor: Google" \
 http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
 
