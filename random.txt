@@ -56,6 +56,11 @@ module "iam-binding-keda-alert-load-monitoring" {
   ]
 }
 
+gcloud projects get-iam-policy db-dev-jiat-mp-dbcs-dev1 `
+  --flatten="bindings[].members" `
+  --filter="bindings.members:ia-173537-1-sa-keda@db-dev-mlf6-mp-afcswb.iam.gserviceaccount.com" `
+  --format="table(bindings.role)"
+
 serviceAccount:
   operator:
     annotations:
