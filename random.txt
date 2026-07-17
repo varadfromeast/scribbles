@@ -56,4 +56,9 @@ module "iam-binding-keda-alert-load-monitoring" {
   ]
 }
 
+serviceAccount:
+  operator:
+    annotations:
+      iam.gke.io/gcp-service-account: ia-173537-1-sa-keda@db-dev-mlf6-mp-afcswb.iam.gserviceaccount.com
+
 kubectl exec -it keda-operator-5ffd454ff4-g2f6g -n keda -- curl -H "Metadata-Flavor: Google" http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
