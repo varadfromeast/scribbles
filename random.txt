@@ -1,6 +1,7 @@
 curl -H "Metadata-Flavor: Google" \
 http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
 
+gcloud monitoring time-series list --project=db-dev-jiat-mp-dbcs-dev1 --filter='metric.type="pubsub.googleapis.com/subscription/num_undelivered_messages"' --limit=1
 
 curl -H "Metadata-Flavor: Google" \
 http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/email
