@@ -1,0 +1,42 @@
+{{- if .Values.keda.enabled }}
+
+apiVersion: keda.sh/v1alpha1
+kind: TriggerAuthentication
+metadata:
+  name: "{{ .Values.serviceName }}-gcp-auth"
+  namespace: "{{ .Values.namespace }}"
+spec:
+  podIdentity:
+    provider: gcp
+
+{{- end }}
+
+{{- if .Values.keda.enabled }}
+
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: "{{ .Values.serviceName }}"
+  namespace: "{{ .Values.namespace }}"
+
+spec:
+  scaleTargetRef:
+    name: {{ .Release.Name }}
+
+  pollingInterval: {{ .Values.keda.pollingInterval }}
+  cooldownPeriod: {{ .Values.keda.cooldownPeriod }}
+
+  minReplicaCount: {{ .Values.keda.minReplicas }}
+  maxReplicaCount: {{ .Values.keda.maxReplicas }}
+
+  triggers:
+    - type: gcp-pubsub
+      authenticationRef:
+        name: "{{ .Values.serviceName }}-gcp-auth"
+
+      metadata:
+        subscriptionName: "{{ .Values.keda.subscriptionName }}"
+        mode: SubscriptionSize
+        value: "{{ .Values.keda.value }}"
+
+{{- end }}
