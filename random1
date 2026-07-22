@@ -1,3 +1,16 @@
+keda:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 8
+  pollingInterval: 2
+  cooldownPeriod: 300
+  subscriptionName: "projects/db-dev-jiat-mp-dbcs-dev1/subscriptions/alert-load-request-subscription"
+  value: "1"
+
+
+
+
+
 {{- if .Values.keda.enabled }}
 
 apiVersion: keda.sh/v1alpha1
