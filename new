@@ -1,0 +1,1 @@
+gcloud container clusters get-credentials afcswb-perf-gke-cluster --zone europe-west3-a --project db-dev-c6xp-mp-perf-afcswb
