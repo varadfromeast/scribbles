@@ -1,1 +1,3 @@
+kubectl logs -n keda deployment/keda-operator --tail=500 | findstr /i "nls-alert-load"
+
 gcloud container clusters get-credentials afcswb-perf-gke-cluster --zone europe-west3-a --project db-dev-c6xp-mp-perf-afcswb
