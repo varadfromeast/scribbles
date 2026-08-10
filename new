@@ -1,3 +1,11 @@
+gcloud container clusters list --project db-dev-mlf6-mp-afcswb
+gcloud container clusters get-credentials <CLUSTER_NAME> \
+  --region <REGION> \
+  --project db-dev-mlf6-mp-afcswb
+
+
+
+
 kubectl logs -n keda deployment/keda-operator --tail=500 | findstr /i "nls-alert-load"
 
 gcloud container clusters get-credentials afcswb-perf-gke-cluster --zone europe-west3-a --project db-dev-c6xp-mp-perf-afcswb
