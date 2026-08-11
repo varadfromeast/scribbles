@@ -1,3 +1,8 @@
+kubectl logs -n keda <operator-pod-1> --since=60m
+kubectl logs -n keda <operator-pod-2> --since=60m
+kubectl logs -n keda <operator-pod-3> --since=60m
+
+
 kubectl get pods -n keda | findstr keda-operator
 
 
