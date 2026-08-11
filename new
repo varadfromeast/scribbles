@@ -1,3 +1,6 @@
+kubectl logs -n keda keda-operator-95db8865d-b78kr --since=60m | findstr /i "error pubsub monitoring credential permission metric"
+
+
 kubectl logs -n keda <metrics-apiserver-pod-1> --since=60m
 kubectl logs -n keda <metrics-apiserver-pod-2> --since=60m
 kubectl logs -n keda <metrics-apiserver-pod-3> --since=60m
