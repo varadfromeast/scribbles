@@ -1,3 +1,6 @@
+kubectl get --raw "/apis/external.metrics.k8s.io/v1beta1/namespaces/perf"
+
+
 kubectl logs -n keda keda-operator-95db8865d-b78kr --since=60m | findstr /i "error pubsub monitoring credential permission metric"
 
 
