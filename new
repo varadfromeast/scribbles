@@ -1,3 +1,7 @@
+gcloud pubsub subscriptions describe alert-load-request-subscription ^
+  --project=db-dev-c6xp-mp-perf-afcswb
+
+
 gcloud iam service-accounts get-iam-policy ^
   ia-173537-1-sa-keda@db-dev-c6xp-mp-perf-afcswb.iam.gserviceaccount.com ^
   --project=db-dev-c6xp-mp-perf-afcswb
