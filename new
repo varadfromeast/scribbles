@@ -1,3 +1,14 @@
+gcloud iam service-accounts get-iam-policy ^
+  ia-173537-1-sa-keda@db-dev-c6xp-mp-perf-afcswb.iam.gserviceaccount.com ^
+  --project=db-dev-c6xp-mp-perf-afcswb
+
+
+gcloud projects get-iam-policy db-dev-54mh-mp-dbcs-perf ^
+  --flatten="bindings[].members" ^
+  --filter="bindings.members:ia-173537-1-sa-keda@db-dev-c6xp-mp-perf-afcswb.iam.gserviceaccount.com" ^
+  --format="table(bindings.role,bindings.members)"
+
+
 kubectl annotate serviceaccount keda-operator \
   -n keda \
   iam.gke.io/gcp-service-account="$SA_EMAIL" \
