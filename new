@@ -1,3 +1,6 @@
+kubectl get pods -n keda | findstr keda-operator
+
+
 gcloud pubsub subscriptions describe alert-load-request-subscription ^
   --project=db-dev-54mh-mp-dbcs-perf
 
