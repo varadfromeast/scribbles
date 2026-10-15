@@ -1,5 +1,13 @@
-dbHarness proposes a secure, extensible internal AI agent platform powered by open-weight models hosted on Deutsche Bank’s existing GPU infrastructure.
+dbHarness will initially evaluate a Pi-based coding agent powered by a suitable open-weight model deployed in collaboration with dbLLM.
 
-The initiative will begin by evaluating an internally maintained coding agent built on an open-source harness such as Pi, benchmarked against existing commercial capabilities such as Gemini CLI. The objective is to determine whether internally hosted models can deliver competitive engineering outcomes at a lower long-term total cost of ownership.
+The initial use case is end-to-end software defect resolution. Given a reported issue, the agent will investigate the codebase, identify potential root causes, implement a fix, prepare test data, execute validation in an isolated sandbox and generate a draft pull request for human review.
 
-Starting with a controlled engineering proof of concept, dbHarness aims to evolve into a reusable AI execution and model-access capability, developed in collaboration with dbLLM and Ada. This could enable teams to seamlessly consume approved internal and external models, accelerating open-weight AI adoption across coding, document intelligence and other enterprise workflows.
+Pi provides an extensible agent framework that can be configured with different model providers, execution tools and workflows. This enables experimentation with internally hosted models while establishing a reusable foundation for future capabilities beyond conventional IDE-based assistance.
+
+The solution will be benchmarked against the existing Gemini CLI capability using representative engineering tasks and comparable environments. Evaluation will focus on independently verified bug resolution, code quality, execution time, developer intervention, reliability and total cost per successful outcome.
+
+The experiment will begin with limited GPU capacity and a small developer beta, following the bank’s AI Operating Model and Path to Production requirements.
+
+If validated, dbHarness could evolve into a supported, model-agnostic agent platform integrated with existing Ada and dbLLM capabilities. Developers and applications could select suitable approved internal or external models, while future integrations could enable access to OCR, embeddings, vision, advanced reasoning models and enterprise tools.
+
+The proposed platform will focus on model consumption and agent execution, complementing existing AI asset discovery and model-serving infrastructure rather than duplicating it.
