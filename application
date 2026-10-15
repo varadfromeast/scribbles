@@ -1,13 +1,36 @@
-dbHarness will initially evaluate a Pi-based coding agent powered by a suitable open-weight model deployed in collaboration with dbLLM.
+Context
 
-The initial use case is end-to-end software defect resolution. Given a reported issue, the agent will investigate the codebase, identify potential root causes, implement a fix, prepare test data, execute validation in an isolated sandbox and generate a draft pull request for human review.
+Deutsche Bank has invested in powerful GPU infrastructure, with dbLLM already deploying open-weight AI models for internal use and Ada providing a platform for discovering AI assets.
 
-Pi provides an extensible agent framework that can be configured with different model providers, execution tools and workflows. This enables experimentation with internally hosted models while establishing a reusable foundation for future capabilities beyond conventional IDE-based assistance.
+Meanwhile, AI coding tools are evolving beyond IDE-based code suggestions into agents capable of investigating complex bugs, modifying code, executing tests, and completing multi-step software engineering workflows.
 
-The solution will be benchmarked against the existing Gemini CLI capability using representative engineering tasks and comparable environments. Evaluation will focus on independently verified bug resolution, code quality, execution time, developer intervention, reliability and total cost per successful outcome.
+Developers currently have access to GitHub Copilot within their IDEs and Gemini CLI. However, we have not yet established whether powerful open-weight models running on our existing GPUs can deliver a similarly capable coding-agent experience through an internally maintained harness.
 
-The experiment will begin with limited GPU capacity and a small developer beta, following the bank’s AI Operating Model and Path to Production requirements.
+Problem Statement
 
-If validated, dbHarness could evolve into a supported, model-agnostic agent platform integrated with existing Ada and dbLLM capabilities. Developers and applications could select suitable approved internal or external models, while future integrations could enable access to OCR, embeddings, vision, advanced reasoning models and enterprise tools.
+Can we leverage Deutsche Bank’s existing GPU infrastructure and open-weight models to build powerful in-house AI coding agents that are technically competitive, economically viable at scale, and reusable across engineering teams?
 
-The proposed platform will focus on model consumption and agent execution, complementing existing AI asset discovery and model-serving infrastructure rather than duplicating it.
+An inference endpoint alone does not provide a complete coding-agent experience. Agents require an execution harness capable of navigating repositories, modifying files, running commands, managing context, executing tests, and iterating on failures.
+
+We propose to explore this opportunity using the open-source Pi agent framework, powered by a capable open-weight coding model hosted in collaboration with dbLLM.
+
+The initial challenge is to demonstrate that this combination can reliably perform end-to-end software engineering tasks and establish whether its quality, latency, and long-term operating costs justify wider adoption.
+
+Business Impact and Supporting Evidence
+
+We will evaluate a representative bug-resolution workflow involving code investigation, root-cause identification, implementing fixes, preparing test data, sandboxed validation, and generating draft pull requests.
+
+Our evaluation will include:
+
+* Accuracy: Compare independently verified task success and code quality against Gemini CLI and the existing Copilot-assisted IDE workflow.
+* Latency and productivity: Measure end-to-end resolution time, agent execution time, and the developer intervention required.
+* Cost: Measure the fully loaded cost per successful task, including GPU usage, model serving, engineering maintenance, and support, against the costs of existing tools.
+* Commercial alternative: Model the hypothetical cost of Claude Code subscriptions at different adoption levels as an additional financial reference, without treating Claude Code as a tested technical baseline.
+
+The objective is to establish measurable evidence that an internally owned, open-weight-model-powered agent harness can work effectively and identify the scale at which its economics could become attractive.
+
+The opportunity extends beyond coding agents. Validating this approach could establish reusable engineering capabilities for making other internally hosted models, including OCR, embeddings, vision, and reasoning models, easier to consume through collaboration with dbLLM and Ada.
+
+This could increase the value derived from existing GPU investments, reduce avoidable dependence on paid external AI services, strengthen control over sensitive data processing, and develop internal expertise in deploying, integrating, and maintaining AI systems.
+
+The initial experiment will determine whether these potential benefits justify further investment, providing a practical starting point for making open-weight AI a regularly used capability across Deutsche Bank.
