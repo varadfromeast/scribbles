@@ -1,61 +1,9 @@
-Proposed Approach
+dbHarness proposes to leverage Deutsche Bank’s existing GPU infrastructure to make powerful open-weight AI models accessible and practical for internal engineering and enterprise workflows.
 
-We propose to begin with a focused experiment: deploying a powerful open-weight coding model on Deutsche Bank’s existing GPU infrastructure in collaboration with dbLLM, and connecting it to an extensible open-source coding-agent harness such as Pi or OpenCode.
+We will begin by deploying a capable open-weight coding model in collaboration with dbLLM and integrating it with an open-source agent harness such as Pi or OpenCode. The resulting agent will be evaluated on end-to-end software engineering tasks, including bug investigation, code modification, sandboxed testing, and pull-request generation.
 
-The agent will attempt end-to-end software engineering tasks, including investigating bugs, implementing fixes, preparing test data, executing tests in a sandbox, and generating draft pull requests.
+We will benchmark accuracy, latency, developer effort, and cost against existing Gemini CLI and Copilot-assisted workflows, with a hypothetical Claude Code subscription scenario as an additional cost reference. The objective is to validate whether internally hosted coding agents can deliver competitive performance with favorable economics at scale.
 
-We will benchmark its accuracy, latency, developer effort, and cost against Gemini CLI and existing Copilot-assisted workflows. We will also estimate the hypothetical cost of commercial Claude Code subscriptions at different adoption levels.
+Beyond coding, our ambition is to collaborate with dbLLM and Ada to make open-weight models a routinely accessible option across Deutsche Bank, enabling applications using OCR, embeddings, vision, and advanced reasoning models.
 
-The objective is to determine whether an internally hosted coding agent can provide competitive performance and favorable economics at scale. We will start with limited GPU capacity and expand only if the results justify further investment.
-
-Expected Business Outcomes
-
-1. Establish a viable alternative to paid AI intelligence
-
-Deutsche Bank has already invested in powerful GPU infrastructure. By combining this infrastructure with open-weight models and an internally maintained agent harness, we aim to establish whether capable AI agents can be delivered at a lower long-term cost.
-
-Successful validation could reduce the need for additional commercial AI subscriptions and external model API consumption for workflows where internal models provide sufficient quality.
-
-The economic assessment will include GPU utilization and opportunity cost, model serving, engineering maintenance, and support to determine the scale at which internal solutions become financially attractive.
-
-2. Unlock broader adoption of open-weight models across Deutsche Bank
-
-The coding-agent experiment is intended to prove a much larger opportunity: that internally hosted models can power useful enterprise applications without every team having to build its own AI infrastructure and integrations.
-
-Our ambition is to collaborate with dbLLM and Ada to make open-weight models as accessible and straightforward to consume as approved external AI services.
-
-Beyond coding agents, this could unlock use cases involving internally hosted OCR models for document processing, embedding models for knowledge retrieval, vision models, and larger reasoning models for complex workflows.
-
-By reusing common model-access integrations, approved agent frameworks, and existing AI platforms, future teams could develop AI solutions more quickly and with less duplicated engineering effort.
-
-3. Maximize the value of existing AI infrastructure
-
-Rather than treating GPU infrastructure as a resource used only for individual model deployment requests, we aim to demonstrate how these investments can support reusable AI capabilities serving multiple teams and workloads.
-
-Working with dbLLM on model serving and Ada on enterprise integration would allow the bank to build upon existing investments without duplicating their responsibilities.
-
-4. Strengthen security and internal AI ownership
-
-Running models on bank-controlled infrastructure can offer greater control over where sensitive code, documents, and other enterprise information are processed, reducing the need to send such data to external AI providers for suitable workloads.
-
-An internally maintained harness also allows us to implement approved execution boundaries, access controls, auditing, and human oversight.
-
-Equally importantly, developing this capability would build internal expertise in model serving, inference optimization, agent engineering, evaluation, and maintaining AI applications—reducing reliance on external providers for both intelligence and engineering capabilities.
-
-Feasibility and Success Criteria
-
-The initial proof of concept will use a limited allocation of existing GPU capacity, an approved open-source agent framework, and representative engineering tasks in isolated development environments.
-
-Success will be assessed through independently verified bug fixes, end-to-end execution time, developer intervention, reliability, and fully loaded cost per successful task.
-
-The experiment will follow Deutsche Bank’s AI Operating Model and Path to Production requirements, including appropriate security, data classification, licensing, and AI governance reviews.
-
-A successful experiment would justify a controlled developer beta and further collaboration with dbLLM and Ada to establish reusable model-access and agent-execution capabilities.
-
-Long-Term Ambition
-
-Our ultimate objective is to make internally hosted open-weight models a practical, regularly considered option for building AI solutions across Deutsche Bank.
-
-By validating one demanding engineering use case first, we aim to establish the technical foundation, economic evidence, and internal expertise required to unlock many more.
-
-This could enable the bank to build increasingly capable AI applications on infrastructure it already controls, improve long-term cost efficiency, strengthen data protection, and maintain greater ownership of its AI technology stack.
+By running inference within approved bank-controlled infrastructure, we can keep sensitive code, prompts, and model outputs within internal security boundaries, reducing reliance on external AI services for suitable workloads while strengthening data control, cost efficiency, and internal AI engineering expertise.
