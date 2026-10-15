@@ -1,0 +1,5 @@
+dbHarness proposes a secure, extensible internal AI agent platform powered by open-weight models hosted on Deutsche Bank’s existing GPU infrastructure.
+
+The initiative will begin by evaluating an internally maintained coding agent built on an open-source harness such as Pi, benchmarked against existing commercial capabilities such as Gemini CLI. The objective is to determine whether internally hosted models can deliver competitive engineering outcomes at a lower long-term total cost of ownership.
+
+Starting with a controlled engineering proof of concept, dbHarness aims to evolve into a reusable AI execution and model-access capability, developed in collaboration with dbLLM and Ada. This could enable teams to seamlessly consume approved internal and external models, accelerating open-weight AI adoption across coding, document intelligence and other enterprise workflows.
