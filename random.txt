@@ -1,3 +1,9 @@
+curl -X POST \
+  'http://localhost:8080/screening-gateway/1.0.0/screening/full' \
+  -H 'Content-Type: application/json' \
+  -d '{"fullScreeningBatchNo":"1334"}'
+
+
 gcloud pubsub topics publish <TOPIC_NAME> --project=db-dev-jiat-mp-dbcs-dev1 --message="test-1"
 
 gcloud pubsub subscriptions describe alert-load-request-subscription --project=db-dev-jiat-mp-dbcs-dev1
