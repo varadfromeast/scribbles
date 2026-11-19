@@ -9,7 +9,7 @@
 WITH g AS (
   SELECT DISTINCT LPAD(REGEXP_REPLACE(PARTY_ID, r'[^0-9]', ''), 13, '0') AS id
   FROM `db-dev-jiat-mp-dbcs-dev1.test_dataset.2572_gcp_source_data_extract_10Nov2026`
-  WHERE PARTY_ID <> 'PARTY_ID' AND IS_SCRN_ELIGIBLE = 'Y'
+  WHERE PARTY_ID <> 'PARTY_ID' AND IS_SCRN_ELIGBLE = 'Y'
 ),
 op AS (
   SELECT DISTINCT LPAD(REGEXP_REPLACE(EXTERNALRECORDID, r'[^0-9]', ''), 13, '0') AS id
