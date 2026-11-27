@@ -13,3 +13,7 @@ for repo, filename in [
         print('SUCCESS:', path)
     except Exception as exc:
         print('FAILED:', type(exc).__name__, str(exc))
+
+# Direct terminal commands (copy without the leading #):
+# python -c "from huggingface_hub import hf_hub_download; print(hf_hub_download('Qwen/Qwen3-14B', 'config.json', etag_timeout=10))"
+# python -c "from huggingface_hub import hf_hub_download; print(hf_hub_download('hf-internal-testing/tiny-random-gpt2', 'pytorch_model.bin', etag_timeout=10))"
